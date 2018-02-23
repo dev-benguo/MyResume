@@ -1,0 +1,74 @@
+extends layout
+
+block content
+  div(class="container")
+    div(class="main-menu")
+      ul(class="main-menu-list")
+        li
+          a(class="link-home active" href="#section_home" data-show="section_home")首页
+        li
+          a(class="link-resume" href="#section_resume" data-show="section_resume")简历
+        li
+          a(class="link-skills" href="#section_skills" data-show="section_skills")技能
+        li
+          a(class="link-contact" href="#section_contact" data-show="section_contact")联系
+    div(id="section_home")
+      div(class="section-common section-home active")
+        <!-- profile pic-->
+        div(class="profile-pic")
+          div(class="resume-head")
+        div(class="profile-desc")
+          h1(class="profile-title")
+            你好，我是 
+            span(class="color1")郭斌!
+          h2(class="profile-subtitle") Front End Developer
+          hr
+          div(class="profile-desc-text") 
+            p 从事软件开发工作已经7年多了，非常喜欢软件行业，对软件开发工作有着浓厚的兴趣。对新鲜事物充满好奇心，喜欢学习和研究新的技术。最近几年前端技术发展快速，新技术不断涌现，作为一名极客经常<br/>自学和实践新的前端技术。
+          div(class="contact-info")邮箱：benguo0704@163.com / 手机：18191135698
+        div(class="social-icons")
+          a(title="Linkedin")
+            i(class="")
+          a(title="")
+    div(id="section_resume")
+      div(class="section-common section-resume")
+        h2(class="section-title") 简历
+        each item in resumeData
+          h3(class="sub-section-title")= item.name
+          each resume in item.list
+            div(class="resume-item")
+              h4= resume.title
+              h5= resume.dateTime
+              p!= resume.desc
+        
+    div(id="section_skills")
+      div(class="section-common section-skills")
+        h2(class="section-title") 技能
+        <!-- skill list-->
+        each skill in skillList
+          div(class="skillbar clearfix" data-percent=skill.percent)
+            div(class="skillbar-title")
+              span= skill.text
+            div(class="skillbar-bar" style='background: #{skill.bgColor}')
+            div(class="skill-bar-percent")= skill.percent
+
+    div(id="section_contact")
+      div(class="section-common section-contact")
+        h2(class="section-title") 联系
+        <!-- contact info-->
+        ul(class="social-list")
+         
+         li(class="social-item")
+          div(class="img-wrapper")
+           img(src="/img/email.png")
+          span benguo0704@163.com
+         li(class="social-item")
+          div(class="img-wrapper")
+           img(src="/img/mobile.png")
+          span 18191135698
+         li(class="social-item")
+          div(class="img-wrapper")
+           img(src="/img/location.png")
+          span 陕西省 西安市 高新区 西安环普科技产业园
+        div(id="mapContainer" class="map-container")
+         div(id="mapPanel")
