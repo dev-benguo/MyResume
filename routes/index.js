@@ -7,7 +7,7 @@ let skillList = require('../service/data-skills');
 router.get('/', function(req, res, next) {
  
   
-  res.render('index', { title: 'Ben\'s CV (NodeJS + Express + Sass)', resumeData: resumeData, skillList: skillList});
+  res.render('index', { title: 'Ben\'s CV (NodeJS + Express + Sass) | Resume', resumeData: resumeData, skillList: skillList});
 });
 
 module.exports = router;

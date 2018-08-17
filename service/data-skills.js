@@ -20,6 +20,16 @@ module.exports = [
       'bgColor': ' #285FA6'
     },
     {
+      'text': 'Vue',
+      'percent': '68%',
+      'bgColor': ' #59AE7B'
+    },
+    {
+      'text': 'React',
+      'percent': '70%',
+      'bgColor': ' #77D3FA'
+    },
+    {
       'text': 'Bootstrap',
       'percent': '80%',
       'bgColor': ' #6236B6'
